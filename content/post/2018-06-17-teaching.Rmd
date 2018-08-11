@@ -2,13 +2,9 @@
 title: Curated Collection of Teaching Materials
 author: Emi Tanaka
 date: '2018-06-17'
-slug: teaching
+slug: 2018-06-teaching
 categories: [teaching]
 tags: [teaching]
-header:
-  image: "headers/underconstruction.png"
-draft: yes
-summary: "I put this post together for curation of my teaching materials."
 ---
 
 ## Applied Linear Models (STAT3012 at USYD)

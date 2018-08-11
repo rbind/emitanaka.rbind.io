@@ -7,11 +7,6 @@ categories: [modelling, R]
 highlight: true
 mathjax: true
 tags: [asreml, R]
-draft: yes
-header:
-  image: "headers/picturecoming.png"
-summary: "<code>asreml</code>-R fits a model by estimating the variance components using REML approach with the average information (AI) algorithm (Johnson and Thompson, 1995). This method was popularised and implemented in the stand-alone program ASreml (Gilmour et al., 1995) which is widely used, in particular by breeders.  An interface for R was written based on the core algorithm in the stand-alone program, which we refer to as asreml-R (Butler et al., 2009). The <code>asreml</code>-R package is a powerful R-package to fit linear mixed models, with one huge advantage over competition is that, as far as I can see, it allows a lot of flexibility in the variance structures and more intuitive in its use.
-"
 ---
 
 ## Data: Wheat Yield Trial

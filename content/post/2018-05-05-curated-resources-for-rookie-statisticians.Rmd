@@ -2,15 +2,9 @@
 title: Curated Resources for Rookie Statisticians
 author: ~
 date: '2018-05-05'
-slug: resources
+slug: 2018-05-resources
 categories: []
 tags: []
-summary: I put this post together so that it may be useful for those just dipping
-  into statistics and/or the Aussie water.
-toc2: yes
-header:
-  image: headers/aussie.png
-draft: yes
 ---
 
 

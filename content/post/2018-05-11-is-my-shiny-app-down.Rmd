@@ -7,8 +7,6 @@ categories: [R, shiny]
 tags: [R, shiny]
 cover:
   image: "/post/2018-05-12-ismyshinydown/ismyshinydown.gif"
-draft: yes
-summary: "Imagine that you have a shiny app running on a web server. You tell people that they can see your work available as a shiny web app. You give the web address. One day you try to show someone your work but the website displays an error."
 ---
 
 Imagine that you have a shiny app running on a web server. You tell people that they can see your work available as a shiny web app. You give the web address. One day you try to show someone your work but the website displays an error. `r emo::ji("fear")`
