@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+https://emitanaka.netlify.com/* https://emitanaka.rbind.io/:splat 301!
