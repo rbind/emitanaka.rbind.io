@@ -1,0 +1,12 @@
+id = "emitanaka"
+
+[email]
+username = "dr.emi.tanaka"
+host = "gmail.com"
+
+[name]
+display = "Emi Tanaka"
+
+[social]
+email = ""
+twitter = "statsgen"

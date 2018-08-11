@@ -1,0 +1,47 @@
+---
+title: Curated Resources for Rookie Statisticians
+author: ~
+date: '2018-05-05'
+slug: resources
+categories: []
+tags: []
+summary: I put this post together so that it may be useful for those just dipping
+  into statistics and/or the Aussie water.
+toc2: yes
+header:
+  image: headers/aussie.png
+draft: yes
+---
+
+
+```{r echo=FALSE}
+blogdown::shortcode('alert note', 'I put this post together so that it may be useful for those just dipping into statistics and/or the Aussie water.')
+```
+
+## Career
+There is an excellent list of jobs that can be offered by taking **mathematics and/or statistics** compiled by AMSI found [here](http://mathsadds.amsi.org.au/). Some mailing lists post jobs so it is worth subscribing to it.
+
+## Mailing Lists
+There are some number of statistical mailing lists that is worthwhile subscribing to (but best muted lest you are okay getting bombarded with gazillion notifications). People periodically post job advertisement to these mailing list as well. Here are some of my favorites:
+
+* [anzstat](http://www.maths.uq.edu.au/research/research_centres/anzstat/)
+* [allstat](https://www.jiscmail.ac.uk/cgi-bin/webadmin?A0=ALLSTAT)
+
+## Societies
+Joining a society will gives you a chance to be involved with the community. Many societites give a heavily discounted fee or even free membership to students.
+
+* [The International Biometric Soceity](http://biometricsociety.org.au/)
+* [The Statistical Society of Australia](http://www.statsoc.org.au/)
+* [Australian Mathematical Sciences Institute](http://amsi.org.au/)
+
+## Teaching
+
+I found [Seeing Theory](https://students.brown.edu/seeing-theory/#firstPage) to be one of the most beautfiul visual teaching tools for statistics. This site was made by Daniel Kunin while he was an undergraduate student!
+
+### Learning R
+
+If you want to learn more about R, [R-bloggers](https://www.r-bloggers.com) curate a list of blogs with R related posts.
+
+## Jokes
+
+Have some fun with this compiled list of jokes [here](../jokes.html).

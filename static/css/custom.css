@@ -1,0 +1,13 @@
+/* Custom CSS */
+
+#quote {
+	background: #fff;
+	padding: 0 10px;
+	margin-top: 75px;
+	line-height: 1.6em;
+}
+
+#character {
+	color: #f5322d;
+	margin-right: 25px;
+}

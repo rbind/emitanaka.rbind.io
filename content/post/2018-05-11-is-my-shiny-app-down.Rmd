@@ -1,0 +1,67 @@
+---
+title: R Shiny down notification
+author: Emi Tanaka
+date: '2018-05-12'
+slug: 2018-05-ismyshinydown
+categories: [R, shiny]
+tags: [R, shiny]
+cover:
+  image: "/post/2018-05-12-ismyshinydown/ismyshinydown.gif"
+draft: yes
+summary: "Imagine that you have a shiny app running on a web server. You tell people that they can see your work available as a shiny web app. You give the web address. One day you try to show someone your work but the website displays an error."
+---
+
+Imagine that you have a shiny app running on a web server. You tell people that they can see your work available as a shiny web app. You give the web address. One day you try to show someone your work but the website displays an error. `r emo::ji("fear")`
+
+![](/post/2018-05-12-ismyshinydown/yourshinyisdown.gif)
+
+![](/post/2018-05-12-ismyshinydown/1-error.png)
+*How long has it been down? How many people has seen the error?*
+
+Ah the embarassment. What if worse yet that you submitted a manuscript with a shiny app and the reviewers were in the midst of checking it? What a nightmarish scenario... One that I would not hope for anyone else (except those reviewers that give a one sentence review, darn you). 
+
+A certain variation of this happened to me couple of days ago and so I decided to get serious about investigating how to mitigate the situation. 
+
+`r htmltools::HTML("{{% alert note %}}
+This method is mainly for those that run R shiny from their own servers. If you are using [shinyapps.io](https://www.shinyapps.io/) then it's not a good idea to implement this because it may be eating your active hours unnecessary. I would assume if you are using [shinyapps.io](https://www.shinyapps.io/) then it would be more reliable and unlikely to affect your R package installations.
+{{% /alert %}}
+")`
+
+There are probably better solution out there but this works well at the moment and it is easy to set it up. 
+
+## Solution
+
+The error occured for me because there was some other person changing the R packages on the shiny server and I wasn't paying attention to all the changes. During this change, one of the packages that my shiny app depends on was removed. This caused a 500-internal error. 
+
+What I wanted was an email notification if my shiny app goes down. The solution I could think was to have another server access and check the status of the app but I don't really have another server to be checking the shiny server each time. I figured that there must be already some service that notifies you when your website goes down... And yes there is. A number of them in fact. 
+
+The one that I decided to settle on was [UptimeRobot](https://uptimerobot.com/). They allow for 50 monitors that check your app every 5 minutes, totally FREE. They also look reliable having been running since January 2010. 
+
+To get started, you need to sign up. Once you sign up, you need to start a new monitor. In the new monitor information, you select the HTTP(s) monitor type and enter your shiny app url. 
+
+![](/post/2018-05-12-ismyshinydown/2-newmonitor.png)
+
+I tested it out on a working test app. Then I edited the shiny app to include a package that was not installed on the server. Several minutes later, I got an email to notify that the app is down. So it seems like it is all working as I wanted!
+
+![](/post/2018-05-12-ismyshinydown/3-monitorstatus.png)
+
+If you'd rather get a different notifcation, you can get alerted via SMS, Twitter, Slack, push and so on. Some of the features highlighted on their websites are as below:
+
+![](/post/2018-05-12-ismyshinydown/4-features.png)
+
+## Where it might not work 
+
+So how does [UptimeRobot](https://uptimerobot.com/) work? The detail below on their website explains it well. 
+
+![](/post/2018-05-12-ismyshinydown/5-howitworks.png)
+
+In short, they are checking the status codes in your website header. This however means that you may not be notified of other types of errors. This error could be an isolated part of your shiny app. These isolated erros (I think) is generally something that can be detected at the deployment of your app. For this I suggest that you use the [shinytest](https://rstudio.github.io/shinytest/articles/shinytest.html) package from RStudio and streamline a testing framework for your app. 
+
+## Get statistics on your app runtime
+
+What I like with the Uptime Robot setup is that you get to see when it likely went down as you have the statistics saved on your account. 
+
+![](/post/2018-05-12-ismyshinydown/6-nowwersetup.png)
+
+For now, I've set it up for my apps and websites. Now I hope I can (and you too) avoid my (your) shiny app being down for too long in the future!
+

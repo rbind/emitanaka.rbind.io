@@ -1,0 +1,45 @@
+---
+title: Curated Collection of Teaching Materials
+author: Emi Tanaka
+date: '2018-06-17'
+slug: teaching
+categories: [teaching]
+tags: [teaching]
+header:
+  image: "headers/underconstruction.png"
+draft: yes
+summary: "I put this post together for curation of my teaching materials."
+---
+
+## Applied Linear Models (STAT3012 at USYD)
+
+`r htmltools::HTML("{{< tweet 994536595725344770 >}}")`
+
+`r htmltools::HTML("{{< tweet 995456566403854336 >}}")`
+
+`r htmltools::HTML("{{< tweet 996269546674651137 >}}")`
+
+`r htmltools::HTML("{{< tweet 997962182678605824 >}}")`
+
+`r htmltools::HTML("{{< tweet 998788158476075008 >}}")`
+
+`r htmltools::HTML("{{< tweet 999603835139112960 >}}")`
+
+`r htmltools::HTML("{{< tweet 1000656427231334400 >}}")`
+
+That infamous quote...
+
+`r htmltools::HTML("{{< tweet 1000665101014253569 >}}")`
+
+`r htmltools::HTML("{{< tweet 1001293550531694592 >}}")`
+
+
+Just a reminder that women make contributions too!
+`r htmltools::HTML("{{< tweet 1001700098680803328 >}}")`
+
+`r htmltools::HTML("{{< tweet 1002135134198382592 >}}")`
+
+`r htmltools::HTML("{{< tweet 1003169605295067136 >}}")`
+
+
+`r htmltools::HTML("{{< tweet 1003953983256326144 >}}")`

@@ -1,0 +1,16 @@
+---
+title: Curated Collection of Statistical Jokes
+author: Emi Tanaka
+date: '2017-12-30'
+slug: jokes
+categories: []
+tags: []
+header:
+  image: "headers/underconstruction.png"
+draft: yes
+---
+
+* There are two kinds of people in the world: those who can extrapolate from incomplete data sets. Source: [CrossValidated](https://stats.stackexchange.com/questions/1337/statistics-jokes/48240).
+* More to come.
+
+Please feel free to pass me your jokes and I will list it here with appropriate credit. 
