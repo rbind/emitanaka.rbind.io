@@ -1,0 +1,38 @@
+---
+title: Deconstructing scripts and learning D3.js
+author: Emi Tanaka
+date: '2018-08-18'
+slug: deconstructing-scripts-and-learning-d3js
+categories:
+  - hacking
+tags:
+  - d3js
+  - javascript
+authors: []
+---
+
+
+
+<p>TL;DR: my step-by-step throught process as I deconstruct another person’s scripts.</p>
+<p>I got asked from a collaborator to make a similar interactive plot referenced in a site. She wanted it running locally in her computer. The work is in progress and I was not asked to mention it so I won’t say which site. She pointed me to the source file of the website.</p>
+<p>The source file was <em>complicated</em> to say the least. It was full of <code>php</code> files and <code>javascripts</code> which I’m not familiar with and a mix of <code>perl</code>, <code>python</code> and even <code>R</code> codes. Not to mention there is not a lot of comments.</p>
+<p>Anyhow, admist this butternut-squash-apple-brocolli-other-strange-mix soup, I gave it a try.</p>
+<center>
+<img src="/post/2018-08-18-learning-d3-js-on-the-fly_files/challenge_accepted.gif" alt="challenge accepted gif" width="70%"/>
+</center>
+<p>The task involved me trying to isolate which file was the one that creating the interactive plot. I thought the <code>R</code> file maybe doing this. Looking at the code, I can only see the static <code>ggplot</code>. After much trouble I figured out how it was processing the data. It was through two <code>python</code> scripts. Then I ran through the <code>R</code> script. Yup only a static plot as expected. It’s at least a nice static plot that I can give to my collaborator.</p>
+<p>The interactive plot lied in the collection of <code>php</code> files and <code>javascripts</code>. I didn’t know what <code>php</code> files were so I looked it up. It seems like it’s for some SQL use? I decided to stop there. <code>php</code> files also look like a <code>html</code> so I figured I can modify it to a <code>html</code>.</p>
+<p>I quickly read the <code>javascript</code> and saw that it is using the <code>D3</code>. Looking at the <code>php</code> file I could only imagine that the <code>&lt;svg&gt;&lt;/svg&gt;</code> tag was modified by this <code>javascript</code>. I found the selector for this in the script. I don’t really know <code>d3.js</code> but from reading the code I got the rough gist. I got to the point where I believe I had a working <code>html</code> + <code>js</code>. But the plot wasn’t showing.</p>
+<p>I believed it should be working. I’ve stripped the problem enough to get the minimum of what I need. Testing further I realised that the input file was not getting read in. First thing I need to start a local host going so that the files can be read. This is problematic though if the input file is not within the same folder or the sub folder. Essentially I had a structure like below:</p>
+<pre><code>├── code
+|   ├── index.html
+|   └── js
+|       ├──plot.js
+|       └──d3.js
+└── output
+    └── input.csv
+</code></pre>
+<p>I ended up moving the <code>output</code> folder in the <code>code</code> folder and changed the pathways. Maybe I could have had a better way of working. After a couple of hours doing this I just wanted to move on. What was great to see was that it was done! I had the interactive plot moving! A little celebration for the noob! I am a bit proud of figuring it all out :smile:</p>
+<center>
+<img src="/post/2018-08-18-learning-d3-js-on-the-fly_files/yay.gif" alt="Yay!" width="70%"/>
+</center>
