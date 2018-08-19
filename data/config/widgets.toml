@@ -1,7 +1,7 @@
 # About Widget config
 [about]
-title = "EMI"                            # default: .Site.Title
-description = "Striving Cool Hacker<br>Wanna-be Artist<br>Eternal Learning"                      # default: .Site.Params.info.description
+title = "Emi Tanaka"                            # default: .Site.Title
+description = "Aspiring Cool Hacker<br>Wanna-be Artist<br>Eternally Learning"                      # default: .Site.Params.info.description
 logo = "/images/logo.png"             # default: "/images/logo.png"
 
 # Recent Posts Widget config
