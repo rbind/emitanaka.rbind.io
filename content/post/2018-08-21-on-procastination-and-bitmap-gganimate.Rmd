@@ -64,6 +64,8 @@ With some googling to find out which one might be the best for reading it in as 
 
 And it was done :)
 
+![rladies sydney gif](/post/2018-08-21-on-procastination-and-bitmap-gganimate_files/rladies2.gif){width=80%}
+
 ```{r, echo=F}
 blogdown::shortcode("tweet", "1031059844566929408")
 ```
