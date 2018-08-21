@@ -28,6 +28,11 @@ var quotes = [
 	},	
 	
 	{ 
+	quote: "All models are wrong, except mine.",
+	character: "Emi Tanaka"
+	},	
+		
+	{ 
 	quote: "More data means more information, but it also means more false information.",
 	character: "Nassim Nicholas Taleb"
 	},	
