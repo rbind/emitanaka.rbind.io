@@ -53,9 +53,9 @@ So to get started, I needed to get a bitmap matrix for the words 'R Ladies' and 
 
 I copied the style 'R Ladies' from the orignal and 'Sydney' was made from another styled bitmap with some improvising. 
 
-![RLadies](/post/2018-08-21-on-procastination-and-bitmap-gganimate_files/rladies.png){width=80%}
+![](/post/2018-08-21-on-procastination-and-bitmap-gganimate_files/rladies.png){width=80%}
 
-![Sydney](/post/2018-08-21-on-procastination-and-bitmap-gganimate_files/sydney.png){width=80%}
+![](/post/2018-08-21-on-procastination-and-bitmap-gganimate_files/sydney.png){width=80%}
 
 With some googling to find out which one might be the best for reading it in as bitmap and with the help of [this tutorial](https://coolbutuseless.github.io/2018/08/12/gganimate-with-bitmap-fonts/), I got the code working and put it as my first github gist:
 
@@ -64,7 +64,7 @@ With some googling to find out which one might be the best for reading it in as 
 
 And it was done :)
 
-![rladies sydney gif](/post/2018-08-21-on-procastination-and-bitmap-gganimate_files/rladies2.gif){width=80%}
+![](/post/2018-08-21-on-procastination-and-bitmap-gganimate_files/rladies2.gif){width=80%}
 
 ```{r, echo=F}
 blogdown::shortcode("tweet", "1031059844566929408")
