@@ -1,0 +1,53 @@
+---
+title: On procastination and bitmap gganimate
+author: Emi Tanaka
+date: '2018-08-21'
+slug: on-procastination-and-bitmap-gganimate
+categories:
+  - R
+  - hacking
+tags:
+  - R
+  - animation
+authors: []
+---
+
+
+
+<p>With the <a href="https://iscbasc2018.com/">Joint International Society for Clinical Biostatisitcs and Australian Statistical Conference 2018</a> approaching where I am presenting a poster, giving a poster pitch, giving a talk, delivering a seminar at <a href="https://www.meetup.com/R-Ladies-Melbourne/events/253534679/">R-Ladies Melbourne meeting</a> as well as <a href="https://emitanaka.rbind.io/post/deconstructing-scripts-and-learning-d3js/">continuing collaborations</a>, I think it’s no time from procastination. I have to get things done.</p>
+<p>Then this happened.</p>
+{{% tweet "1030707160550846464" %}}
+<p>And this was me. The idiot.</p>
+{{% tweet "1031024475741937666" %}}
+<p>I was yet to join the <code>gganimate</code> user group so I was quite excited to have an excuse to give it a try. I first had to install the <a href="https://github.com/thomasp85/gganimate"><code>gganimate</code> package</a>. I had the old version of the package by David Robinson. Thomas Lin Perdensen has been developing the package with David’s blessings and showcased the package at the <a href="https://user2018.r-project.org/">useR! 2018</a> conference held in Brisbane, Australia. His talk on <a href="https://www.youtube.com/watch?v=21ZWDrTukEs&amp;t=6s">“The Grammar of Animation”</a> was well received (at the very least by me).</p>
+{{% tweet "1018953472564084736" %}}
+<p>David not long after the useR! 2018 accepted fully Thomas’s pull request and transferred the ownership. Here here to the new king of <code>gganimate</code>! Now I just want segues.</p>
+<p>Anyhow, installing was quite a bit of pain. First issue I had was installing the dependency <code>gifski</code>. After some time trying, I figured out that it was having issue finding an element to do with the R core algorithm. It then clicked to me that my version of R (v3.3) was old. I delayed updating as I was afraid certain packages may break. I decided to take the risk and installed the latest R (v3.5.1). Then <code>gifski</code> installed fine. Next I had to reinstall other dependencies <code>tweenr</code> and <code>transformr</code>. Both are Thomas’s packages. I managed to install <code>tweenr</code> from CRAN but for <code>transformr</code> I had to install it from github. This is where I hit the next installation issue.</p>
+<pre><code>Could not find build tools necessary</code></pre>
+<p>I had a lot of trouble figuring this out. I reinstalled some developer tools for Mac. Still getting the same error. It should be working but it seems to be failing somewhere.</p>
+<p>The trick to bypass this part was to bypass the building tool check by</p>
+<pre class="r"><code>options(buildtools.check = function(action) TRUE )</code></pre>
+<p>then everything worked fine.</p>
+<div id="bitmap-gganimate" class="section level2">
+<h2>Bitmap <code>gganimate</code></h2>
+<p>So to get started, I needed to get a bitmap matrix for the words ‘R Ladies’ and ‘Sydney’. The easiest way I figured was to draw this and read it in <code>R</code>. So I download and installed <a href="https://paintbrush.sourceforge.io/">Paintbrush</a>.</p>
+<p>I copied the style ‘R Ladies’ from the orignal and ‘Sydney’ was made from another styled bitmap with some improvising.</p>
+<div class="figure">
+<img src="/post/2018-08-21-on-procastination-and-bitmap-gganimate_files/rladies.png" alt="RLadies" style="width:80.0%" />
+<p class="caption">RLadies</p>
+</div>
+<div class="figure">
+<img src="/post/2018-08-21-on-procastination-and-bitmap-gganimate_files/sydney.png" alt="Sydney" style="width:80.0%" />
+<p class="caption">Sydney</p>
+</div>
+<p>With some googling to find out which one might be the best for reading it in as bitmap and with the help of <a href="https://coolbutuseless.github.io/2018/08/12/gganimate-with-bitmap-fonts/">this tutorial</a>, I got the code working and put it as my first github gist:</p>
+<script src="https://gist.github.com/emitanaka/ef1d1b6ade5e57acc4734bc4bfbcc0cd.js"></script>
+<p>And it was done :)</p>
+{{% tweet "1031059844566929408" %}}
+<p>I learned a lot so thank you for the challenge!</p>
+{{% tweet "1031060582529609731" %}}
+<p>So I go sweating to get my work done. <br></p>
+<p>Yup, that’s right.<br></p>
+<p>You can tell I’m procastinating again writing this blog.</p>
+<p>I might learn one day.</p>
+</div>

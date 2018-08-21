@@ -1,0 +1,83 @@
+---
+title: On procastination and bitmap gganimate
+author: Emi Tanaka
+date: '2018-08-21'
+slug: on-procastination-and-bitmap-gganimate
+categories:
+  - R
+  - hacking
+tags:
+  - R
+  - animation
+authors: []
+---
+
+With the [Joint International Society for Clinical Biostatisitcs and Australian Statistical Conference 2018](https://iscbasc2018.com/) approaching where I am presenting a poster, giving a poster pitch, giving a talk, delivering a seminar at [R-Ladies Melbourne meeting](https://www.meetup.com/R-Ladies-Melbourne/events/253534679/) as well as [continuing collaborations](https://emitanaka.rbind.io/post/deconstructing-scripts-and-learning-d3js/), I think it's no time from procastination. I have to get things done. 
+
+Then this happened. 
+
+```{r, echo=F}
+blogdown::shortcode("tweet", "1030707160550846464")
+```
+
+And this was me. The idiot.
+
+```{r, echo=F}
+blogdown::shortcode("tweet", "1031024475741937666")
+```
+
+I was yet to join the `gganimate` user group so I was quite excited to have an excuse to give it a try. I first had to install the [`gganimate` package](https://github.com/thomasp85/gganimate). I had the old version of the package by David Robinson. Thomas Lin Perdensen has been developing the package with David's blessings and showcased the package at the [useR! 2018](https://user2018.r-project.org/) conference held in Brisbane, Australia. His talk on ["The Grammar of Animation"](https://www.youtube.com/watch?v=21ZWDrTukEs&t=6s) was well received (at the very least by me). 
+
+```{r, echo=F}
+blogdown::shortcode("tweet", "1018953472564084736")
+```
+
+David not long after the useR! 2018 accepted fully Thomas's pull request and transferred the ownership. Here here to the new king of `gganimate`! Now I just want segues. 
+
+Anyhow, installing was quite a bit of pain. First issue I had was installing the dependency `gifski`. After some time trying, I figured out that it was having issue finding an element to do with the R core algorithm. It then clicked to me that my version of R (v3.3) was old. I delayed updating as I was afraid certain packages may break. I decided to take the risk and installed the latest R (v3.5.1). Then `gifski` installed fine. Next I had to reinstall other dependencies `tweenr` and `transformr`. Both are Thomas's packages. I managed to install `tweenr` from CRAN but for `transformr` I had to install it from github. This is where I hit the next installation issue. 
+
+    Could not find build tools necessary
+    
+I had a lot of trouble figuring this out. I reinstalled some developer tools for Mac. Still getting the same error. It should be working but it seems to be failing somewhere. 
+
+The trick to bypass this part was to bypass the building tool check by
+```r
+options(buildtools.check = function(action) TRUE )
+```
+
+then everything worked fine. 
+
+## Bitmap `gganimate`
+
+So to get started, I needed to get a bitmap matrix for the words 'R Ladies' and 'Sydney'. The easiest way I figured was to draw this and read it in `R`. So I download and installed [Paintbrush](https://paintbrush.sourceforge.io/).
+
+I copied the style 'R Ladies' from the orignal and 'Sydney' was made from another styled bitmap with some improvising. 
+
+![RLadies](/post/2018-08-21-on-procastination-and-bitmap-gganimate_files/rladies.png){width=80%}
+
+![Sydney](/post/2018-08-21-on-procastination-and-bitmap-gganimate_files/sydney.png){width=80%}
+
+With some googling to find out which one might be the best for reading it in as bitmap and with the help of [this tutorial](https://coolbutuseless.github.io/2018/08/12/gganimate-with-bitmap-fonts/), I got the code working and put it as my first github gist:
+
+<script src="https://gist.github.com/emitanaka/ef1d1b6ade5e57acc4734bc4bfbcc0cd.js"></script>
+
+
+And it was done :)
+
+```{r, echo=F}
+blogdown::shortcode("tweet", "1031059844566929408")
+```
+
+I learned a lot so thank you for the challenge!
+
+```{r, echo=F}
+blogdown::shortcode("tweet", "1031060582529609731")
+```
+
+So I go sweating to get my work done. <br>
+
+Yup, that's right.<br>
+
+You can tell I'm procastinating again writing this blog. 
+
+I might learn one day.
