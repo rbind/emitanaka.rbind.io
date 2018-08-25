@@ -13,7 +13,7 @@ tags:
 authors: []
 ---
 
-With the [Joint International Society for Clinical Biostatisitcs and Australian Statistical Conference 2018](https://iscbasc2018.com/) approaching where I am presenting a poster, giving a poster pitch, giving a talk, delivering a seminar at [R-Ladies Melbourne meeting](https://www.meetup.com/R-Ladies-Melbourne/events/253534679/) as well as [continuing collaborations](https://emitanaka.rbind.io/post/deconstructing-scripts-and-learning-d3js/), I think it's no time from procastination. I have to get things done. 
+With the [Joint International Society for Clinical Biostatisitcs and Australian Statistical Conference 2018](https://iscbasc2018.com/) approaching where I am presenting a poster, giving a poster pitch, giving a talk, delivering a seminar at [R-Ladies Melbourne meeting](https://www.meetup.com/R-Ladies-Melbourne/events/253534679/) as well as [continuing collaborations](https://emitanaka.rbind.io/post/deconstructing-scripts-and-learning-d3js/), I think it's no time for procastination. I have to get things done. 
 
 Then this happened. 
 
