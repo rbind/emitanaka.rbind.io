@@ -13,7 +13,7 @@ authors: []
 
 TL;DR: my step-by-step throught process as I deconstruct another person's scripts.
 
-I got asked from a collaborator to make a similar interactive plot referenced in a site. She wanted it running locally in her computer. The work is in progress and I was not asked to mention it so I won't say which site. She pointed me to the source file of the website.
+I got asked from a collaborator to make a similar interactive plot referenced in a site. She wanted it running locally in her computer. The work is in progress and I was asked not to mention it so I won't say which site. She pointed me to the source file of the website.
 
 The source file was *complicated* to say the least. It was full of `php` files and `javascripts` which I'm not familiar with and a mix of `perl`, `python` and even `R` codes. Not to mention there is not a lot of comments.
 
