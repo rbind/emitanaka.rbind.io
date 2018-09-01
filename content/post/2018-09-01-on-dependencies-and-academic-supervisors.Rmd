@@ -55,7 +55,7 @@ This opens up a can of worms! The traditional measure of success in academia are
 
 ## There is uncertainty in any prediction
 
-Any prediction has uncertainty. You just never know what can happen in the future. The best you can do is gather information as much as you can and make an informed choice.
+Any prediction has uncertainty. You just never know what can happen in the future. The best you can do is gather information as much as you can and make an informed choice. Even then there will be a lot uncertainty. 
 
 If anything, you can adopt my style of making decision from difficult choices by drawing randomly from your choices. You can easily put a different weight to your choices in `R` if the choices are not even for you. I've used a similar method to make a decision. I don't know if it's working for me but it does free up my time from over-thinking about a future where anything can happen. 
 
