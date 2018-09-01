@@ -37,7 +37,8 @@ The purpose of this blog post is to show the use of simple but *cool html tricks
 <p>The list of hugo theme can be found <a href="https://themes.gohugo.io/">here</a>. To use the hugo themes that are hosted in github, you need to know the github username and repository and replace <code>theme=username/repository</code> in the argument. The github page can be usually found from selecting one of the theme <a href="https://themes.gohugo.io/">here</a> &gt; Homepage. The username and repositary can be found in the url in the form of <code>https://github.com/username/respository</code>.</p>
 <p><i class="fa fa-tasks" style="font-size:20px;"></i> After you have chosen the theme that you want, the first thing is to open the file <code>config.toml</code>. Usually it’s pretty straight forward here. Replace the values in the <code>config.toml</code> to your details. After you have done that run the command</p>
 <pre class="r"><code>blogdown::serve_site()</code></pre>
-<p><img src="/post/2018-05-05-blogdowntutorial/config.png" /> You should find the site is now rendered on the Viewer pane in RStudio.</p>
+<p><img src="/post/2018-05-05-blogdowntutorial/config.png" />
+You should find the site is now rendered on the Viewer pane in RStudio.</p>
 <p><i class="fa fa-info-circle" style="font-size:20px;color:red;"></i> Getting an error running the above command? You may be able to fix this by updating <code>blogdown</code> to the latest version. <code>blogdown</code> has dependencies so you those may need to update those too so try running the following if it’s still not working for you:</p>
 <pre class="r"><code>update.packages(ask=FALSE)</code></pre>
 <p>If you are still having an issue then try googling it first. If you really have trouble resolving it then post the error message in stack overflow with the blogdown tag. If you can, put a minimum replicable example with your post.</p>
@@ -48,11 +49,19 @@ The purpose of this blog post is to show the use of simple but *cool html tricks
 What makes blogdown amazing is its ability for a seamless workflow of creating a website with sections rendered by R markdown. 
 {{% /alert %}}
 
-<p>This is probably explained best by an example. Let’s say we make our first post.</p>
+<p>This is probably explained best by an example.
+Let’s say we make our first post.</p>
 <pre class="r"><code>blogdown::new_post(title=&quot;Hello World!&quot;, slug=&quot;firstpost&quot;, subdir=&quot;blog&quot;)</code></pre>
-<p>This should make a new markdown document that will load in RStudio. Here is a glimpse of what I wrote in that markdown: <img src="/post/2018-05-05-blogdowntutorial/firstpostmarkdown1.png" /> Now if you run <code>blogdown::serve_site()</code> (or if you still have it running from before, it may automatically update as you change it), you should be able to see your post. The address of the post should be something like <code>your.base.url/blog/firstpost</code>. You will then see something like below image <img src="/post/2018-05-05-blogdowntutorial/postwithmarkdown.png" /> So the above just shows the R commands but did not evaluate those commands. Let’s redo this with R markdown. You can do this by adding by the argument <code>ext=&quot;.Rmd&quot;</code> as below.</p>
+<p>This should make a new markdown document that will load in RStudio. Here is a glimpse of what I wrote in that markdown:
+<img src="/post/2018-05-05-blogdowntutorial/firstpostmarkdown1.png" />
+Now if you run <code>blogdown::serve_site()</code> (or if you still have it running from before, it may automatically update as you change it), you should be able to see your post. The address of the post should be something like <code>your.base.url/blog/firstpost</code>. You will then see something like below image
+<img src="/post/2018-05-05-blogdowntutorial/postwithmarkdown.png" />
+So the above just shows the R commands but did not evaluate those commands. Let’s redo this with R markdown. You can do this by adding by the argument <code>ext=&quot;.Rmd&quot;</code> as below.</p>
 <pre class="r"><code>blogdown::new_post(title=&quot;Hello World!&quot;, slug=&quot;firstpost&quot;, subdir=&quot;blog&quot;, ext=&quot;.Rmd&quot;)</code></pre>
-<p><img src="/post/2018-05-05-blogdowntutorial/firstpostRmarkdown.png" /> Since it is a R markdown, you need R to execute the R commands. So now running <code>blogdown::serve_site()</code>, we have: <img src="/post/2018-05-05-blogdowntutorial/postwithRmarkdown.png" /> and you can see that the plot has rendered!</p>
+<p><img src="/post/2018-05-05-blogdowntutorial/firstpostRmarkdown.png" />
+Since it is a R markdown, you need R to execute the R commands. So now running <code>blogdown::serve_site()</code>, we have:
+<img src="/post/2018-05-05-blogdowntutorial/postwithRmarkdown.png" />
+and you can see that the plot has rendered!</p>
 {{% alert note %}}
 This whole process streamlined makes posts with R commands easier and also makes it easily reproducible!{{% /alert %}}
 
@@ -84,16 +93,21 @@ These tricks are more likely to break your website so be sure to back it up befo
 {{% /alert %}}
 
 <p>Once you realise the structure of how hugo generates the website then you can start to see how to embed some custom html codes to bling up your website. For example, here is a glowing twitter icon:</p>
-<p><a href="https://codepen.io/WithAnEs/pen/mHuLE" class="wrapper"> <svg width="200" height="200" viewBox="0 0 216 216"> <path id="twitter" d="M193.9,64c0.1,1.9,0.1,3.8,0.1,5.7c0,58.6-44.6,126.1-126.1,126.1c-25,0-48.3-7.3-67.9-19.9
+<p><a href="https://codepen.io/WithAnEs/pen/mHuLE" class="wrapper">
+<svg width="200" height="200" viewBox="0 0 216 216">
+<path id="twitter" d="M193.9,64c0.1,1.9,0.1,3.8,0.1,5.7c0,58.6-44.6,126.1-126.1,126.1c-25,0-48.3-7.3-67.9-19.9
       c3.5,0.4,7,0.6,10.6,0.6c20.8,0,39.9-7.1,55-19c-19.4-0.4-35.8-13.2-41.4-30.8c2.7,0.5,5.5,0.8,8.3,0.8c4,0,8-0.5,11.7-1.6
       C24,121.9,8.7,104,8.7,82.5c0-0.2,0-0.4,0-0.6c6,3.3,12.8,5.3,20.1,5.5C16.9,79.6,9,66,9,50.6c0-8.1,2.2-15.7,6-22.3
       c21.9,26.8,54.5,44.5,91.3,46.3c-0.8-3.2-1.1-6.6-1.1-10.1c0-24.5,19.8-44.3,44.3-44.3c12.7,0,24.3,5.4,32.3,14
       c10.1-2,19.6-5.7,28.1-10.8c-3.3,10.3-10.3,19-19.5,24.5c9-1.1,17.5-3.5,25.5-7C210.1,49.9,202.5,57.7,193.9,64z"
 
       stroke-dasharray="1100 1100"
-    /> </svg> </a></p>
+    />
+</svg>
+</a></p>
 <p>To place this in your website, go first to this <a href="https://codepen.io/WithAnEs/pen/mHuLE">website</a> then on the footer and click on the Export then Export.zip. Unzip this file.</p>
-<p><img src="/post/2018-05-05-blogdowntutorial/twitterpen.png" /> This parcticular so-called <em>pen</em> comprises of html and css. Copy the <code>css</code> folder from the pen folder into the <code>static</code> folder in your website folder.</p>
+<p><img src="/post/2018-05-05-blogdowntutorial/twitterpen.png" />
+This parcticular so-called <em>pen</em> comprises of html and css. Copy the <code>css</code> folder from the pen folder into the <code>static</code> folder in your website folder.</p>
 <p>Next open the <code>index.html</code> from the pen folder <em>using RStudio</em> (or a text editor of your choice). For this part, you need to have a read through of the code to find the relevant part. You cannot simply copy and paste all the content of <code>index.html</code> since your website will have it’s own header, body structure and footer. Scanning <code>index.html</code>, the relevant code for the pen is contained here</p>
 <pre><code>  &lt;div class=&quot;wrapper&quot;&gt;
   &lt;svg width=&quot;200&quot; height=&quot;200&quot; viewBox=&quot;0 0 216 216&quot;&gt;

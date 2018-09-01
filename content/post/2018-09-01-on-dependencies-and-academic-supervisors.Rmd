@@ -1,0 +1,70 @@
+---
+title: On dependencies and academic supervisors
+author: Emi Tanaka
+date: '2018-09-01'
+slug: on-dependencies-and-academic-supervisors
+categories:
+  - academia
+tags:
+  - academia
+  - ponderings
+authors: []
+---
+
+A conversation at the bar has led me to think about several points regarding academic supervision and how one percieves their choice of academic supervisor at the right time as their own "success" or "failure". 
+
+![](/post/2018-09-01-on-dependencies-and-academic-supervisors_files/whysoserious.gif){width=80%}
+
+Truthfully, this is not the first time I have heard these conversations nor the first time I have pondered about it. So here goes my thought on this serious topic!
+
+## Does your success in academia depend on your academic supervisor(s)?
+
+First, I think this is dependant on which program. Short term projects like summer research projects (which span about 4-8 weeks) and honours project (which span less than a year) won't necessary have a serious repercussion and also would give you a good taste of what it is like to do research and work with that supervisor. The crucial choice is more of your *PhD* supervisor especially if you want to stay in academia afterwards.  
+
+**Why is the choice of your PhD supervisor important?** <br>
+There are a number of reasons. I am sure there are other blogs that beautifully write about this. To highlight a few reasons that I can think on top of my head:
+
+1. PhD programs typically span 3-5 years and that's a long time to be working with someone that you will spend a lot of time with. Remember that your PhD supervisor is going to be a referee for your jobs so you want **someone that you can get along with** in the long run.
+1. There are a LOT of literature out there. If anything the number of published papers have exponentially gone up. The problem is that not all published papers are worth reading. No matter how good you are, when you are just starting out, you need guidance to pinpoint you to the right direction otherwise you might just be spending too much time just searching for that needle in the haystack. Your PhD supervisor should have the experience to know the "shortcuts" to research *and* he/she needs to be willing to share those shortcuts with you. **Mentorship matters**.
+1. I'm sure you would have heard that **networking is important**. Your PhD supervisor will have connections and introductions from your PhD supervisor to the right people can help you heaps to form networks and trust easily. 
+
+The common theme that you may have noticed in the above points is that **you get a lot of boost if your PhD supervisor is invested in you to succeed**.
+
+Does it conversely mean that **you cannot be successful without the right academic supervisor(s)**? And for this I believe no. Your success is a combination of your own ability and the environment around you. To put it in equation form:
+
+success = ability + environment + environment : ability.
+
+Being in the right environment does help you give a boost but what I believe is more important is honing your ability. 
+The danger of being in a good environment is that you conflate your ability with your environmental fortune and that the moment the environment changes, you flop because you only learnt to succeed in a certain type of environment. 
+
+A bad environment gives an opportunity for you to delineate and measure your own abilities. If you can survive it, you will also come to believe in yourself more. So good or bad, count either as a blessing!
+
+
+## Retrospective justification
+
+Now if you didn't pick the "right" supervisor, is it your fault? Conversely, if you chose the "right" supervisor, is that part of your ability?
+
+I have seen cases where when something is not working, the student will blame the PhD supervisor. I have also seen cases where the student who received a lot of opportunities from their PhD supervisor perceive the choice they have made in supervision as part of their own ability. 
+
+I don't believe anyone chooses their supervisor knowing fully what's going to happen. There are so many factors involved that you just don't know how things will turn out. Environment is a fickle thing that I just don't really perceive supervisor choice as part of ability. So consequences that you suffer/flourish from the choice of your supervisor, in my opinion, is not your fault/ability.
+
+## What is success in academia anyway?
+
+This opens up a can of worms! The traditional measure of success in academia are a combination of number of publications, number of citations, amount of grants won, number of successful HDR completions and teaching excellence. There are of course a number of indirect effects academics have that can never be fully captured by these traditional measures. The most important thing in your life isn't whether you are successful in academia anyway!
+
+
+## There is uncertainty in any prediction
+
+Any prediction has uncertainty. You just never know what can happen in the future. The best you can do is gather information as much as you can and make an informed choice.
+
+If anything, you can adopt my style of making decision from difficult choices by drawing randomly from your choices. You can easily put a different weight to your choices in `R` if the choices are not even for you. I've used a similar method to make a decision. I don't know if it's working for me but it does free up my time from over-thinking about a future where anything can happen. 
+
+```{r, echo=F}
+blogdown::shortcode("tweet", "1027332304656465920")
+```
+
+## Summary
+
+PhD supervisor choice is important but it's not the end of the world if you didn't pick the right supervisor for yourself. What is more important, in my opinion, is how you deal with things under sub-optimal environment. 
+
+If you have the "right" supervisor, embrace it and hope your research contributes greatly for everyone else. If you don't have the "right" supervisor, take it as a golden opportunity to tackle the challenging environment and give yourself a pat in successes - big or small - that you get because if the environment wasn't helpful to you then you know for sure that those successes are of your own ability.
