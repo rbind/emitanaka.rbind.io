@@ -1,0 +1,34 @@
+---
+title: knitr:::knitr_code
+author: Emi Tanaka
+date: '2018-09-20'
+slug: knitr-knitr-code
+categories:
+  - R
+tags:
+  - knitr
+authors: []
+---
+
+
+
+<p><a href="https://yihui.name/en/2018/09/code-appendix/">Yihui Xie in his recent post</a> wrote</p>
+<blockquote>
+There was only one thing upon which I hesitated when deciding whether I should give users the access. That is knitr:::knit_code. Here the triple-colon is obviously a danger sign. When you can even modify the content of a code chunk, I have no idea what can happen. Evil or creative? I’ll leave it to you to think about.
+</blockquote>
+<center>
+<img src="/post/2018-09-20-knitr-knitr-code_files/whaaat.gif" style="width:40.0%" />
+</center>
+<p>Yup I saw it: <em>“modify the content of a code chunk”</em>.</p>
+<p>A few days before this I made a tutorial slide that incrementally reveals building a scatter plot for <code>ggplot</code>.</p>
+{{% tweet "1041279648452108289" %}}
+<p><img src="/post/2018-09-20-knitr-knitr-code_files/ggplot2.2018-09-16%2020_48_05.gif" style="width:100.0%" /></p>
+<p>The slide was made using <code>xaringan</code> and the incremental reveal was made by copying and pasting the slide multiple times, deleting lines and then adding highlight to the right line. It did the job but this was far from ideal especially when I decided to change the order of the line so that <code>theme_bw</code> appears last.<br />
+I wanted to do something simliar to the implementation in <a href="https://github.com/emitanaka/ninja-theme"><code>ninjutsu.css</code></a> where there is a “layout” slide that acts as a template for incremental reveals of cells. This makes the task easier by needing to make change only to <em>one</em> layout slide. This solution wasn’t obvious to me if it involved code chunks.</p>
+<p>Yihui’s post set me off to look into <code>knitr:::knit_code</code>. Quick googling didn’t reveal too much documentation on it. It was when I came across <a href="https://stackoverflow.com/questions/40735727/create-index-of-definitions-theorems-at-end-of-bookdown-book">this Stack Overflow by Steve Powell</a> then did I get it how to use it.</p>
+<p>Then I had a <code>xaringan</code> slide made with only one code chunk that contains the entire <code>ggplot</code> code.</p>
+<script src="https://gist.github.com/emitanaka/99c5673ddc8f9103dd3c8fec05ab15ea.js"></script>
+<p>Now Yihui writes “Evil or creative? I’ll leave it to you to think about.” Well… now that I know how <code>knitr:::knit_code</code> works, it’s giving me ideas.</p>
+<center>
+<img src="/post/2018-09-20-knitr-knitr-code_files/haha.gif" style="width:80.0%" />
+</center>

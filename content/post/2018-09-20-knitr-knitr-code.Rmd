@@ -1,0 +1,47 @@
+---
+title: knitr:::knitr_code
+author: Emi Tanaka
+date: '2018-09-20'
+slug: knitr-knitr-code
+categories:
+  - R
+tags:
+  - knitr
+authors: []
+---
+
+[Yihui Xie in his recent post](https://yihui.name/en/2018/09/code-appendix/) wrote 
+
+<blockquote>
+There was only one thing upon which I hesitated when deciding whether I should give users the access. That is knitr:::knit_code. Here the triple-colon is obviously a danger sign. When you can even modify the content of a code chunk, I have no idea what can happen. Evil or creative? I’ll leave it to you to think about.
+</blockquote>
+
+<center>
+![](/post/2018-09-20-knitr-knitr-code_files/whaaat.gif){width=40%}
+</center>
+
+Yup I saw it: *"modify the content of a code chunk"*. 
+
+A few days before this I made a tutorial slide that incrementally reveals building a scatter plot for `ggplot`. 
+
+```{r, echo=F}
+blogdown::shortcode("tweet", "1041279648452108289")
+```
+
+![](/post/2018-09-20-knitr-knitr-code_files/ggplot2.2018-09-16 20_48_05.gif){width=100%}
+
+The slide was made using `xaringan` and the incremental reveal was made by copying and pasting the slide multiple times, deleting lines and then adding highlight to the right line. It did the job but this was far from ideal especially when I decided to change the order of the line so that `theme_bw` appears last.  
+I wanted to do something simliar to the implementation in [`ninjutsu.css`](https://github.com/emitanaka/ninja-theme) where there is a "layout" slide that acts as a template for incremental reveals of cells. This makes the task easier by needing to make change only to *one* layout slide. This solution wasn't obvious to me if it involved code chunks. 
+
+Yihui's post set me off to look into `knitr:::knit_code`. Quick googling didn't reveal too much documentation on it. It was when I came across [this Stack Overflow by Steve Powell](https://stackoverflow.com/questions/40735727/create-index-of-definitions-theorems-at-end-of-bookdown-book) then did I get it how to use it. 
+
+Then I had a `xaringan` slide made with only one code chunk that contains the entire `ggplot` code.
+
+<script src="https://gist.github.com/emitanaka/99c5673ddc8f9103dd3c8fec05ab15ea.js"></script>
+
+Now Yihui writes "Evil or creative? I’ll leave it to you to think about." Well... now that I know how `knitr:::knit_code` works, it's giving me ideas.
+
+<center>
+![](/post/2018-09-20-knitr-knitr-code_files/haha.gif){width=80%}
+</center>
+
