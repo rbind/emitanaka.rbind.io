@@ -8,6 +8,11 @@ var quotes = [
 	},
 	
 	{ 
+	quote: "In God we trust. All others bring data.",
+	character: "Edwards Deming"
+	},
+	
+	{ 
 	quote: "Statistics are like bikinis. What they reveal is suggestive, but what they conceal is vital.",
 	character: "Aaron Levenstein"
 	},
