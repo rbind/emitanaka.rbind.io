@@ -1,0 +1,209 @@
+---
+title: 'Scientific and Technical Blogging: Radix vs Blogdown (Remix)'
+author: Emi Tanaka
+date: '2018-09-20'
+slug: scientific-and-technical-blogging-radix-vs-blogdown-remix
+categories:
+  - R
+  - academia
+tags:
+  - academia
+  - R
+output:
+  emix::html_page:
+    toc: true
+---
+
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/d3/d3.min.js"></script>
+<script src="/rmarkdown-libs/dagre/dagre-d3.min.js"></script>
+<link href="/rmarkdown-libs/mermaid/dist/mermaid.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/mermaid/dist/mermaid.slim.min.js"></script>
+<link href="/rmarkdown-libs/DiagrammeR-styles/styles.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/chromatography/chromatography.js"></script>
+<script src="/rmarkdown-libs/DiagrammeR-binding/DiagrammeR.js"></script>
+
+
+<p>Earlier in the year I made a decision switch my website to using <code>blogdown</code>.</p>
+{{% tweet "954656938112860160" %}}
+<p>But there’s a new kid in town. His name is <code>radix</code>. Ooh, hoo.</p>
+{{% tweet "1042436248693104642" %}}
+<p>So how are <code>radix</code> and <code>blogdown</code> R packages different? Let’s first at a look why we want to consider blogging for scientific or technical content using R Markdown and then look at a comparison between the two R packages.</p>
+<div id="why-scientific-or-technical-blog" class="section level2">
+<h2>Why scientific or technical blog?</h2>
+<p>While I don’t wish to dictate what should constitute to be a scientific or technical blog (because I wouldn’t know where to draw the line), there are some blogs that provide large benefits to the scientific community. These could be blogs about technical use or tutorial of software which may not warrant a full-fledged academic article. I have personally benefited from many scientific and technical blogs.</p>
+<p>Another benefit to blogging is that the author has control of the writing style. Scientific or technical articles usually call for formality while blogging is free from such obligation and allow the author to relax to his/her own style of writing. I particularly like authors that display a blend of humour or personal thoughts and experience that makes reading their blogs entertaining for me.</p>
+<p>There is of course a downside to allowing <em>anyone</em> to blog in <em>any</em> style they like. Quality control. It is not hard for some people to make outrangeous scientific claims without any evidence. This of course doesn’t stop happening even with a rigorous scientific process (e.g. the <a href="https://en.wikipedia.org/wiki/MMR_vaccine_controversy">well known case of the fradulent paper alluding that the vaccine causes autism</a>). This is more of a lesson perhaps that it is important that each individuals train themselves with critical thinking.</p>
+</div>
+<div id="why-r-markdown" class="section level2">
+<h2>Why R Markdown?</h2>
+<p>R Markdown, described briefly, allows you to use a simple syntax to seamlessly embed code and its output into documents. Contrary to the name, the code does not have to be R but support varying languages such as python, go, C and even SAS. For the full list see <a href="https://bookdown.org/yihui/rmarkdown/language-engines.html">here</a>.</p>
+<p>R Markdown documents consist of all codes with the ability to easily hide the code (contained in the so-called chunks) for the desired output. The simplicity yet flexibility to customise makes R Markdown a powerful tool that makes it easy for users to adopt reproducible research and literate programming.</p>
+<p>R Markdown is written by the team of software enginners in RStudio who have shown commitment to open source projects and work in a company that appears to have a viable business model. These two points as well as large community usage (shown by the increasing popularity in Figure <a href="#fig:rmarkdowntrend">1</a>) give some assurance to me that there will be a long term commitment to maintaining the R Markdown based R packages.</p>
+<div class="figure"><span id="fig:rmarkdowntrend"></span>
+<img src="/post/2018-12-12-scientific-and-technical-blogging-radix-vs-blogdown-blogdown-remix_files/figure-html/rmarkdowntrend-1.png" alt="The data is taken for a 5 year period 2013-12-22 to 2018-12-16 from google trends on search for term &quot;rmarkdown&quot;. Interest represent worldwide search interest relative to the highest point on the chart over the 5 year period. A value of 100 is the peak popularity for the term. A value of 50 means that the term is half as popular. A score of 0 means there was not enough data for this term. The upward trend in the graph implies that R Markdown is gaining popularity." width="960" />
+<p class="caption">
+Figure 1: The data is taken for a 5 year period 2013-12-22 to 2018-12-16 from google trends on search for term “rmarkdown”. Interest represent worldwide search interest relative to the highest point on the chart over the 5 year period. A value of 100 is the peak popularity for the term. A value of 50 means that the term is half as popular. A score of 0 means there was not enough data for this term. The upward trend in the graph implies that R Markdown is gaining popularity.
+</p>
+</div>
+</div>
+<div id="radix-or-blogdown" class="section level2">
+<h2>Radix or Blogdown?</h2>
+<p>A brief description of <code>radix</code> and <code>blogdown</code> are shown later. Table <a href="#tab:radixvsblogdown">1</a> shows a comparison of features between <code>radix</code> and <code>blogdown</code>.</p>
+<p>A key selling point for me to use <code>radix</code> was the metadata automatically generated that allows easier indexing for <a href="https://scholar.google.com.au/">Google Scholar</a> and automatic article citation generation. As a researcher, we are often required to show impact of our work for grant or promotion applications. This can be difficult to measure for a web post and consequently, a well-received and useful scientific or technical post do not even get the same recognition as a journal article that have contributed less to the scientific discussion or community. By making posts easily citable, I would hope that more recognition is given to web posts that have been helpful for scientific research and it would encourage more individuals to contribute positively to the scientific discussion.</p>
+<p>Another point that <code>radix</code> made it easy for beautiful and elegant writing is the ability to write side comments and customise figure layouts to stretch beyond the post margins. This is doable in <code>blogdown</code> as well, however, it requires work for almost all themes.</p>
+<p>It should be stressed that <code>blogdown</code> is used to create a more general purpose website and it is possible to incorporate all features of <code>radix</code> within the <code>blogdown</code> framework. To implement this requires time and effort so most will find it easier to just use <code>radix</code> for certain purposes. This may change in future though if someone capable can introduce it as a Hugo theme. Yes someone capable…</p>
+{{% tweet "1070927818920472577" %}}
+<center>
+<img src="/post/2018-12-12-scientific-and-technical-blogging-radix-vs-blogdown-blogdown-remix_files/nopressure.gif" />
+</center>
+<table>
+<caption><span id="tab:radixvsblogdown">Table 1: </span>Feature comparison of <code>radix</code> and <code>blogdown</code>. The comparison is based on <code>radix</code> version 0.5.0.9001 and <code>blogdown</code> version 0.9.8.</caption>
+<thead>
+<tr class="header">
+<th align="left">Feature</th>
+<th align="left">radix</th>
+<th align="left">blogdown</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Github Repo Creation Date</td>
+<td align="left">2018-04-23</td>
+<td align="left">2016-11-02</td>
+</tr>
+<tr class="even">
+<td align="left">R Markdown</td>
+<td align="left">✔</td>
+<td align="left">✔</td>
+</tr>
+<tr class="odd">
+<td align="left">For general purpose blogging</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"> Many themes available</td>
+<td align="left">✘</td>
+<td align="left">✔</td>
+</tr>
+<tr class="odd">
+<td align="left"> Adding date and author for posts</td>
+<td align="left">✔</td>
+<td align="left">✔ for most theme.</td>
+</tr>
+<tr class="even">
+<td align="left"> Easy structure customisation</td>
+<td align="left">✘</td>
+<td align="left">✔ depending on the theme.</td>
+</tr>
+<tr class="odd">
+<td align="left"> Adapts to different screens</td>
+<td align="left">✔</td>
+<td align="left">✔ for most theme.</td>
+</tr>
+<tr class="even">
+<td align="left">For scientific/technical writing</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"> BibTeX citation easily works</td>
+<td align="left">✔</td>
+<td align="left">✘</td>
+</tr>
+<tr class="even">
+<td align="left"> Adding affiliation</td>
+<td align="left">✔</td>
+<td align="left">✘ easy to add but some fiddling needed for almost all theme.</td>
+</tr>
+<tr class="odd">
+<td align="left"> Customise figure layout</td>
+<td align="left">✔</td>
+<td align="left">✘ fiddly if going over post margin.</td>
+</tr>
+<tr class="even">
+<td align="left"> Side comments (Tufte style)</td>
+<td align="left">✔</td>
+<td align="left">✘</td>
+</tr>
+<tr class="odd">
+<td align="left"> Popup notes easily works</td>
+<td align="left">✔</td>
+<td align="left">✘ works with some fiddling.</td>
+</tr>
+<tr class="even">
+<td align="left"> Metadata for Google Scholar</td>
+<td align="left">✔</td>
+<td align="left">✘ can be added with some work.</td>
+</tr>
+<tr class="odd">
+<td align="left"> LaTeX easily works</td>
+<td align="left">✔</td>
+<td align="left">✔</td>
+</tr>
+<tr class="even">
+<td align="left"> Cross-reference</td>
+<td align="left">✔</td>
+<td align="left">✔</td>
+</tr>
+<tr class="odd">
+<td align="left">Author</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"> JJ Allaire</td>
+<td align="left">✔</td>
+<td align="left">✘</td>
+</tr>
+<tr class="odd">
+<td align="left"> Rich Iannone</td>
+<td align="left">✔</td>
+<td align="left">✘</td>
+</tr>
+<tr class="even">
+<td align="left"> Yihui Xie</td>
+<td align="left">✔</td>
+<td align="left">✔</td>
+</tr>
+</tbody>
+</table>
+<aside>
+Some technical details in this article may be wrong due to my lack of understanding.
+</aside>
+<div id="radix" class="section level3">
+<h3>Radix</h3>
+<p><code>radix</code> is a new R package, that is based on the <a href="https://github.com/distillpub/template">Distill web framework</a> to bring scientific or technical writing using R Markdown that is native to the web. The <a href="https://github.com/distillpub/template">Distill web framework</a> is used in the <a href="https://distill.pub/about/">Distill Research Journal</a> which publishes research on machine learning. More details about <code>radix</code> are well explained <a href="https://rstudio.github.io/radix/">here</a>. The <code>radix</code> framework is shown as a chart in Figure <a href="#fig:radix">2</a>.</p>
+<center>
+<div class="figure"><span id="fig:radix"></span>
+<div id="htmlwidget-1" style="width:672px;height:768px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"diagram":"\ngraph TD;\n    radix(radix)-->.Rmd(.Rmd);\n    .Rmd-->rmarkdown(rmarkdown);\n    rmarkdown-->Distill(Distill Web Framework);\n    Distill-->Pandoc(Pandoc);\n    Pandoc-->.html(.html);\n    style .Rmd fill:#41b5f4,stroke:#333,stroke-width:2px;\n    style .html fill:#41b5f4,stroke:#333,stroke-width:2px;\n    style Distill fill:#fff,stroke:#333,stroke-width:2px;\n    style Pandoc fill:#f9f,stroke:#333,stroke-width:2px;\n    style radix fill:#f9f,stroke:#333,stroke-width:2px;\n    style rmarkdown fill:#f9f,stroke:#333,stroke-width:2px;\n"},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+Figure 2: Radix Framework in a Chart
+</p>
+</div>
+</center>
+</div>
+<div id="blogdown" class="section level3">
+<h3>Blogdown</h3>
+<p><code>blogdown</code> is an R package that uses <a href="https://gohugo.io/">Hugo</a> in the backend to generate the website. <code>blogdown</code> also can use <a href="https://jekyllrb.com/">Jekyll</a> or <a href="https://hexo.io/">Hexo</a> as the generator in place of Hugo however some features are only supported in Hugo. While the package name signifies that the primary motivation is for blogging, <code>blogdown</code> is not limited to blogs and is flexible to create any website. Details about the <code>blogdown</code> package is best explained in the <a href="https://bookdown.org/yihui/blogdown/">book</a> by Xie et al. (2017). The <code>blogdown</code> framework is shown as a chart in Figure <a href="#fig:blogdown">3</a>.</p>
+<center>
+<div class="figure"><span id="fig:blogdown"></span>
+<div id="htmlwidget-2" style="width:672px;height:768px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"diagram":"\ngraph TD;\n    blogdown(blogdown)-->.Rmd(.Rmd);\n    blogdown-->.Rmarkdown(.Rmarkdown);\n    blogdown-->.md(.md);\n    .md-->BF(Blackfriday);\n    .Rmarkdown-->.markdown(.markdown);\n    .markdown-->BF;\n    .Rmd-->htmlpage(blogdown::html_page);\n    htmlpage-->htmldoc(bookdown::html_document2);\n    htmldoc-->rmd(rmarkdown::output_format);\n    rmd-->Pandoc(Pandoc);\n    Pandoc-->.html(.html);\n    BF-->Hugo(Hugo);\n    .html-->Hugo;\n    Hugo-->web(Stitch Website);\n    web-->deploy(Deploy Website);\n    style blogdown fill:#f9f,stroke:#333,stroke-width:4px;\n    style Pandoc fill:#f9f,stroke:#333,stroke-width:4px;\n    style Hugo fill:#f9f,stroke:#333,stroke-width:4px;\n    style BF fill:#f9f,stroke:#333,stroke-width:4px;\n    style .md fill:#41b5f4,stroke:#333,stroke-width:2px;\n    style .Rmarkdown fill:#41b5f4,stroke:#333,stroke-width:2px;\n    style .markdown fill:#41b5f4,stroke:#333,stroke-width:2px;\n    style .html fill:#41b5f4,stroke:#333,stroke-width:2px;\n    style .Rmd fill:#41b5f4,stroke:#333,stroke-width:2px;\n    style htmlpage fill:#fff,stroke:#333,stroke-width:2px;\n    style htmldoc fill:#fff,stroke:#333,stroke-width:2px;\n    style rmd fill:#fff,stroke:#333,stroke-width:2px;\n    style web fill:#fff,stroke:#333,stroke-width:2px;\n    style deploy fill:#fff,stroke:#333,stroke-width:2px;\n"},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+Figure 3: <code>blogdown</code> Hugo Framework in a Chart. Note that <code>blogdown</code> can use other generators such as Jekyll and Hexo in place of Hugo.
+</p>
+</div>
+</center>
+</div>
+</div>
+<div id="showdown-radix-vs.-blogdown" class="section level2">
+<h2>Showdown: <code>radix</code> vs. <code>blogdown</code></h2>
+<p>With an explicit (but optional) entry for affiliation in <code>radix</code>, users are consciously reminded that their blog posts may also reflect upon their affiliation’s reputation and approach their writing with more seriousness and formality. Additionally, <code>radix</code> is built with scientific and technical writing in mind, thus, the format is more rigid, allowing for more consistency, and have a default set up and features convenient for this purpose (e.g. <code>echo=FALSE</code> as default for the chunks and side comments, etc). These features reduce the friction for the user to produce a beautiful scientific or technical web article.</p>
+<p>It is possible to create a Hugo theme that mimics the <code>radix</code> output therefore there is no reason the more general purpose <code>blogdown</code> cannot be used for scientific or technical writing to achieve a similar output as <code>radix</code>. Of course this requires someone to create the theme and there isn’t a closing matching theme at the moment.</p>
+<p>R Markdown documents are usually used to populate the content for websites generated from both <code>radix</code> and <code>blogdown</code> therefore it would be easy to transition between the two packages albeit requiring some work. Perhaps one day someone will write an article on how to achieve this with minimal work.</p>
+<p>So <code>radix</code> or <code>blogdown</code>? This is ultimately up to you. One thing I’m sure is that writing articles using R Markdown documents has aided greatly in my scientific writing.</p>
+<p><em>This article is an accompaniment of the Software Corner of the <a href="https://www.biometricsociety.org/publications/biometricbulletin/">Biometric Bulletin</a> (to appear). You can see the <code>radix</code> version of this blog <a href="https://emitanaka.github.io/r/posts/2018-12-12-scientific-and-technical-blogging-radix-vs-blogdown/">here</a>.</em></p>
+</div>

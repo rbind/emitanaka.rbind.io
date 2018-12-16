@@ -11,12 +11,10 @@ cover:
 
 
 
-<p>Imagine that you have a shiny app running on a web server. You tell people that they can see your work available as a shiny web app. You give the web address. One day you try to show someone your work but the website displays an error. 😱</p>
-<div class="figure">
-<img src="/post/2018-05-12-ismyshinydown/yourshinyisdown.gif" />
-
-</div>
-<p><img src="/post/2018-05-12-ismyshinydown/1-error.png" /> <em>How long has it been down? How many people has seen the error?</em></p>
+<p>Imagine that you have a shiny app running on a web server. You tell people that they can see your work available as a shiny web app. You give the web address. One day you try to show someone your work but the website displays an error. 😨</p>
+<p><img src="/post/2018-05-12-ismyshinydown/yourshinyisdown.gif" /></p>
+<p><img src="/post/2018-05-12-ismyshinydown/1-error.png" />
+<em>How long has it been down? How many people has seen the error?</em></p>
 <p>Ah the embarassment. What if worse yet that you submitted a manuscript with a shiny app and the reviewers were in the midst of checking it? What a nightmarish scenario… One that I would not hope for anyone else (except those reviewers that give a one sentence review, darn you).</p>
 <p>A certain variation of this happened to me couple of days ago and so I decided to get serious about investigating how to mitigate the situation.</p>
 {{% alert note %}}
@@ -30,36 +28,21 @@ This method is mainly for those that run R shiny from their own servers. If you 
 <p>What I wanted was an email notification if my shiny app goes down. The solution I could think was to have another server access and check the status of the app but I don’t really have another server to be checking the shiny server each time. I figured that there must be already some service that notifies you when your website goes down… And yes there is. A number of them in fact.</p>
 <p>The one that I decided to settle on was <a href="https://uptimerobot.com/">UptimeRobot</a>. They allow for 50 monitors that check your app every 5 minutes, totally FREE. They also look reliable having been running since January 2010.</p>
 <p>To get started, you need to sign up. Once you sign up, you need to start a new monitor. In the new monitor information, you select the HTTP(s) monitor type and enter your shiny app url.</p>
-<div class="figure">
-<img src="/post/2018-05-12-ismyshinydown/2-newmonitor.png" />
-
-</div>
+<p><img src="/post/2018-05-12-ismyshinydown/2-newmonitor.png" /></p>
 <p>I tested it out on a working test app. Then I edited the shiny app to include a package that was not installed on the server. Several minutes later, I got an email to notify that the app is down. So it seems like it is all working as I wanted!</p>
-<div class="figure">
-<img src="/post/2018-05-12-ismyshinydown/3-monitorstatus.png" />
-
-</div>
+<p><img src="/post/2018-05-12-ismyshinydown/3-monitorstatus.png" /></p>
 <p>If you’d rather get a different notifcation, you can get alerted via SMS, Twitter, Slack, push and so on. Some of the features highlighted on their websites are as below:</p>
-<div class="figure">
-<img src="/post/2018-05-12-ismyshinydown/4-features.png" />
-
-</div>
+<p><img src="/post/2018-05-12-ismyshinydown/4-features.png" /></p>
 </div>
 <div id="where-it-might-not-work" class="section level2">
 <h2>Where it might not work</h2>
 <p>So how does <a href="https://uptimerobot.com/">UptimeRobot</a> work? The detail below on their website explains it well.</p>
-<div class="figure">
-<img src="/post/2018-05-12-ismyshinydown/5-howitworks.png" />
-
-</div>
+<p><img src="/post/2018-05-12-ismyshinydown/5-howitworks.png" /></p>
 <p>In short, they are checking the status codes in your website header. This however means that you may not be notified of other types of errors. This error could be an isolated part of your shiny app. These isolated erros (I think) is generally something that can be detected at the deployment of your app. For this I suggest that you use the <a href="https://rstudio.github.io/shinytest/articles/shinytest.html">shinytest</a> package from RStudio and streamline a testing framework for your app.</p>
 </div>
 <div id="get-statistics-on-your-app-runtime" class="section level2">
 <h2>Get statistics on your app runtime</h2>
 <p>What I like with the Uptime Robot setup is that you get to see when it likely went down as you have the statistics saved on your account.</p>
-<div class="figure">
-<img src="/post/2018-05-12-ismyshinydown/6-nowwersetup.png" />
-
-</div>
+<p><img src="/post/2018-05-12-ismyshinydown/6-nowwersetup.png" /></p>
 <p>For now, I’ve set it up for my apps and websites. Now I hope I can (and you too) avoid my (your) shiny app being down for too long in the future!</p>
 </div>

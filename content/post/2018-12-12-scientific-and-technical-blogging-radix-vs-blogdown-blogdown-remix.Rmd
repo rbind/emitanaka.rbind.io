@@ -1,0 +1,295 @@
+---
+title: 'Scientific and Technical Blogging: Radix vs Blogdown (Remix)'
+author: Emi Tanaka
+date: '2018-09-20'
+slug: scientific-and-technical-blogging-radix-vs-blogdown-remix
+categories:
+  - R
+  - academia
+tags:
+  - academia
+  - R
+output:
+  emix::html_page:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(DiagrammeR)
+library(tidyverse)
+library(plotly)
+```
+
+Earlier in the year I made a decision switch my website to using `blogdown`.
+
+```{r echo=FALSE}
+blogdown::shortcode('tweet', '954656938112860160')
+```
+
+But there's a new kid in town. His name is `radix`. Ooh, hoo. 
+
+```{r echo=FALSE}
+blogdown::shortcode('tweet', '1042436248693104642')
+```
+
+So how are `radix` and `blogdown` R packages different? Let's first at a look why we want to consider blogging for scientific or technical content using R Markdown and then look at a comparison between the two R packages.
+
+## Why scientific or technical blog?
+
+While I don't wish to dictate what should constitute to be a scientific or technical blog (because I wouldn't know where to draw the line), there are some blogs that provide large benefits to the scientific community. These could be blogs about technical use or tutorial of software which may not warrant a full-fledged academic article. I have personally benefited from many scientific and technical blogs. 
+
+Another benefit to blogging is that the author has control of the writing style. Scientific or technical articles usually call for formality while blogging is free from such obligation and allow the author to relax to his/her own style of writing. I particularly like authors that display a blend of humour or personal thoughts and experience that makes reading their blogs entertaining for me.
+
+There is of course a downside to allowing *anyone* to blog in *any* style they like. Quality control. It is not hard for some people to make outrangeous scientific claims without any evidence. This of course doesn't stop happening even with a rigorous scientific process (e.g. the [well known case of the fradulent paper alluding that the vaccine causes autism](https://en.wikipedia.org/wiki/MMR_vaccine_controversy)). This is more of a lesson perhaps that it is important that each individuals train themselves with critical thinking.
+
+
+##  Why R Markdown?
+
+R Markdown, described briefly, allows you to use a simple syntax to seamlessly embed code and its output into documents. Contrary to the name, the code does not have to be R but support varying languages such as python, go, C and even SAS. For the full list see [here](https://bookdown.org/yihui/rmarkdown/language-engines.html).
+
+R Markdown documents consist of all codes with the ability to easily hide the code (contained in the so-called chunks) for the desired output. The simplicity yet flexibility to customise makes R Markdown a powerful tool that makes it easy for users to adopt reproducible research and literate programming.
+
+R Markdown is written by the team of software enginners in RStudio who have shown commitment to open source projects and work in a company that appears to have a viable business model. These two points as well as large community usage (shown by the increasing popularity in Figure \@ref(fig:rmarkdowntrend)) give some assurance to me that there will be a long term commitment to maintaining the R Markdown based R packages.
+
+
+
+```{r rmarkdowntrend, layout="l-page-outset", fig.width=10, fig.height=3.5, fig.cap="The data is taken for a 5 year period 2013-12-22 to 2018-12-16 from google trends on search for term \"rmarkdown\". Interest represent worldwide search interest relative to the highest point on the chart over the 5 year period. A value of 100 is the peak popularity for the term. A value of 50 means that the term is half as popular. A score of 0 means there was not enough data for this term. The upward trend in the graph implies that R Markdown is gaining popularity."}
+trend <- structure(list(Week = structure(c(16061, 16068, 16075, 16082, 
+16089, 16096, 16103, 16110, 16117, 16124, 16131, 16138, 16145, 
+16152, 16159, 16166, 16173, 16180, 16187, 16194, 16201, 16208, 
+16215, 16222, 16229, 16236, 16243, 16250, 16257, 16264, 16271, 
+16278, 16285, 16292, 16299, 16306, 16313, 16320, 16327, 16334, 
+16341, 16348, 16355, 16362, 16369, 16376, 16383, 16390, 16397, 
+16404, 16411, 16418, 16425, 16432, 16439, 16446, 16453, 16460, 
+16467, 16474, 16481, 16488, 16495, 16502, 16509, 16516, 16523, 
+16530, 16537, 16544, 16551, 16558, 16565, 16572, 16579, 16586, 
+16593, 16600, 16607, 16614, 16621, 16628, 16635, 16642, 16649, 
+16656, 16663, 16670, 16677, 16684, 16691, 16698, 16705, 16712, 
+16719, 16726, 16733, 16740, 16747, 16754, 16761, 16768, 16775, 
+16782, 16789, 16796, 16803, 16810, 16817, 16824, 16831, 16838, 
+16845, 16852, 16859, 16866, 16873, 16880, 16887, 16894, 16901, 
+16908, 16915, 16922, 16929, 16936, 16943, 16950, 16957, 16964, 
+16971, 16978, 16985, 16992, 16999, 17006, 17013, 17020, 17027, 
+17034, 17041, 17048, 17055, 17062, 17069, 17076, 17083, 17090, 
+17097, 17104, 17111, 17118, 17125, 17132, 17139, 17146, 17153, 
+17160, 17167, 17174, 17181, 17188, 17195, 17202, 17209, 17216, 
+17223, 17230, 17237, 17244, 17251, 17258, 17265, 17272, 17279, 
+17286, 17293, 17300, 17307, 17314, 17321, 17328, 17335, 17342, 
+17349, 17356, 17363, 17370, 17377, 17384, 17391, 17398, 17405, 
+17412, 17419, 17426, 17433, 17440, 17447, 17454, 17461, 17468, 
+17475, 17482, 17489, 17496, 17503, 17510, 17517, 17524, 17531, 
+17538, 17545, 17552, 17559, 17566, 17573, 17580, 17587, 17594, 
+17601, 17608, 17615, 17622, 17629, 17636, 17643, 17650, 17657, 
+17664, 17671, 17678, 17685, 17692, 17699, 17706, 17713, 17720, 
+17727, 17734, 17741, 17748, 17755, 17762, 17769, 17776, 17783, 
+17790, 17797, 17804, 17811, 17818, 17825, 17832, 17839, 17846, 
+17853, 17860, 17867, 17874), class = "Date"), rmarkdown = c(0, 
+0, 4, 3, 2, 3, 2, 2, 2, 7, 3, 3, 4, 2, 2, 4, 3, 2, 6, 4, 2, 7, 
+5, 6, 6, 5, 11, 5, 10, 6, 7, 6, 11, 10, 9, 14, 15, 16, 22, 17, 
+9, 15, 13, 11, 14, 10, 11, 16, 12, 21, 6, 7, 9, 5, 11, 13, 17, 
+23, 20, 21, 30, 23, 23, 25, 20, 12, 18, 13, 12, 19, 29, 22, 11, 
+28, 17, 17, 13, 20, 15, 12, 28, 22, 19, 21, 22, 24, 20, 24, 23, 
+25, 31, 27, 33, 26, 32, 36, 37, 30, 26, 31, 21, 39, 24, 26, 18, 
+13, 28, 24, 27, 33, 40, 33, 38, 44, 38, 37, 41, 25, 42, 45, 29, 
+41, 38, 27, 32, 35, 30, 29, 38, 29, 37, 37, 32, 39, 31, 31, 29, 
+29, 23, 35, 33, 53, 49, 48, 67, 61, 46, 50, 48, 53, 54, 48, 48, 
+52, 56, 53, 43, 21, 39, 50, 60, 75, 52, 52, 63, 61, 68, 78, 71, 
+65, 65, 64, 69, 63, 53, 89, 70, 66, 53, 44, 63, 59, 54, 55, 52, 
+51, 58, 46, 61, 60, 52, 59, 56, 67, 78, 81, 77, 76, 74, 78, 83, 
+74, 74, 79, 56, 71, 78, 62, 70, 29, 57, 54, 75, 88, 96, 86, 71, 
+73, 69, 76, 75, 79, 72, 64, 84, 87, 81, 72, 75, 75, 73, 77, 52, 
+51, 69, 53, 52, 58, 74, 65, 65, 74, 60, 77, 69, 88, 82, 100, 
+87, 89, 96, 91, 78, 83, 89, 71, 74, 69, 91, 96), blogdown = c(0, 
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 
+0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 2, 0, 
+2, 0, 0, 0, 3, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 
+0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 2, 0, 2, 0, 2, 4, 2, 3, 3, 2, 0, 0, 0, 2, 0, 5, 3, 0, 
+2, 2, 2, 2, 3, 4, 5, 4, 6, 6, 3, 3, 3, 3, 3, 5, 2, 2, 3, 2, 3, 
+4, 2, 3, 3, 4, 4, 5, 2, 2, 5, 6, 2, 6, 4, 2, 3, 4, 6, 9, 4, 6, 
+6, 5, 5, 5, 8, 5, 7, 5, 3, 4, 4, 4, 3, 2, 6, 4, 8, 7, 5, 5, 5, 
+5, 3, 3, 5, 8, 7, 5, 5, 5, 4, 5, 2, 4, 4, 5, 4, 1, 4, 4, 4, 4, 
+3, 5, 8, 4, 3, 5, 5), reproducibility = c(15, 19, 36, 34, 53, 
+58, 43, 30, 47, 49, 45, 49, 34, 42, 50, 44, 42, 44, 45, 33, 42, 
+33, 27, 47, 39, 37, 30, 42, 40, 44, 38, 40, 31, 28, 36, 51, 56, 
+43, 59, 51, 38, 41, 59, 38, 46, 33, 50, 42, 31, 47, 43, 33, 25, 
+17, 37, 43, 59, 44, 33, 45, 47, 30, 49, 57, 47, 44, 43, 34, 27, 
+49, 37, 46, 44, 49, 33, 33, 50, 48, 42, 41, 34, 35, 35, 27, 32, 
+33, 42, 69, 83, 62, 75, 55, 59, 48, 38, 40, 44, 70, 60, 51, 35, 
+57, 42, 41, 19, 25, 40, 52, 42, 47, 51, 53, 51, 44, 55, 55, 39, 
+42, 38, 50, 41, 51, 55, 42, 38, 52, 43, 50, 43, 47, 39, 39, 39, 
+39, 36, 34, 32, 46, 41, 55, 48, 56, 53, 62, 64, 51, 59, 61, 48, 
+47, 57, 48, 50, 50, 56, 41, 28, 24, 34, 35, 59, 59, 47, 54, 52, 
+72, 56, 68, 57, 49, 67, 50, 60, 57, 52, 39, 55, 42, 54, 35, 38, 
+48, 48, 35, 39, 37, 39, 41, 39, 49, 44, 41, 51, 60, 60, 52, 52, 
+45, 66, 56, 67, 52, 61, 43, 49, 49, 60, 48, 43, 29, 31, 47, 51, 
+52, 66, 45, 55, 55, 51, 46, 66, 44, 39, 48, 44, 56, 49, 54, 43, 
+45, 52, 44, 53, 32, 41, 44, 32, 44, 44, 41, 36, 40, 41, 41, 52, 
+63, 55, 66, 67, 47, 43, 44, 51, 55, 42, 53, 46, 50, 57, 57), 
+    knitr = c(14, 8, 21, 26, 35, 36, 43, 38, 32, 41, 25, 24, 
+    35, 31, 26, 46, 43, 33, 29, 36, 46, 36, 33, 44, 47, 34, 37, 
+    31, 49, 43, 36, 42, 40, 35, 32, 25, 34, 44, 45, 26, 44, 47, 
+    49, 45, 46, 32, 36, 41, 36, 48, 48, 40, 22, 14, 40, 44, 33, 
+    41, 46, 43, 51, 36, 44, 37, 43, 40, 32, 42, 45, 33, 37, 43, 
+    30, 37, 34, 40, 43, 34, 33, 38, 33, 40, 26, 38, 36, 37, 41, 
+    31, 24, 36, 43, 41, 38, 37, 37, 39, 38, 34, 37, 38, 33, 31, 
+    25, 33, 20, 25, 41, 27, 39, 43, 39, 48, 46, 34, 32, 48, 34, 
+    42, 31, 41, 42, 30, 35, 38, 28, 31, 40, 35, 32, 36, 23, 30, 
+    20, 28, 30, 27, 33, 25, 27, 30, 31, 33, 37, 21, 31, 29, 31, 
+    28, 34, 26, 30, 30, 47, 26, 36, 28, 30, 9, 26, 32, 34, 46, 
+    44, 41, 39, 45, 41, 36, 38, 35, 47, 33, 29, 40, 35, 32, 36, 
+    29, 21, 35, 40, 25, 26, 33, 30, 17, 26, 24, 36, 24, 27, 38, 
+    26, 35, 39, 41, 36, 29, 29, 24, 33, 23, 42, 30, 31, 24, 28, 
+    26, 31, 18, 24, 21, 27, 31, 27, 25, 23, 31, 25, 24, 28, 28, 
+    27, 26, 34, 26, 30, 28, 23, 24, 22, 18, 26, 21, 21, 18, 21, 
+    28, 15, 24, 19, 25, 23, 16, 17, 19, 28, 20, 23, 25, 27, 26, 
+    25, 17, 31, 16, 15, 25, 18, 23)), class = c("tbl_df", "tbl", 
+"data.frame"), row.names = c(NA, -260L), spec = structure(list(
+    cols = list(Week = structure(list(format = ""), class = c("collector_date", 
+    "collector")), rmarkdown = structure(list(), class = c("collector_double", 
+    "collector")), blogdown = structure(list(), class = c("collector_double", 
+    "collector")), reproducibility = structure(list(), class = c("collector_double", 
+    "collector")), knitr = structure(list(), class = c("collector_double", 
+    "collector"))), default = structure(list(), class = c("collector_guess", 
+    "collector"))), class = "col_spec"))
+g <- ggplot(trend, aes(Week, rmarkdown)) + geom_point() + geom_line() + theme_bw(base_size=18) + ylab("Interest") + ggtitle("rmarkdown google trend")
+g
+```
+
+
+## Radix or Blogdown?
+
+A brief description of `radix` and `blogdown` are shown later. Table \@ref(tab:radixvsblogdown) shows a comparison of features between `radix` and `blogdown`. 
+
+A key selling point for me to use `radix` was the metadata automatically generated that allows easier indexing for [Google Scholar](https://scholar.google.com.au/) and automatic article citation generation. As a researcher, we are often required to show impact of our work for grant or promotion applications. This can be difficult to measure for a web post and consequently, a well-received and useful scientific or technical post do not even get the same recognition as a journal article that have contributed less to the scientific discussion or community. By making posts easily citable, I would hope that more recognition is given to web posts that have been helpful for scientific research and it would encourage more individuals to contribute positively to the scientific discussion.
+
+Another point that `radix` made it easy for beautiful and elegant writing is the ability to write side comments and customise figure layouts to stretch beyond the post margins. This is doable in `blogdown` as well, however, it requires work for almost all themes. 
+
+It should be stressed that `blogdown` is used to create a more general purpose website and it is possible to incorporate all features of `radix` within the `blogdown` framework. To implement this requires time and effort so most will find it easier to just use `radix` for certain purposes. This may change in future though if someone capable can introduce it as a Hugo theme. Yes someone capable...
+
+```{r echo=FALSE}
+blogdown::shortcode('tweet', '1070927818920472577')
+```
+
+<center>
+![](/post/2018-12-12-scientific-and-technical-blogging-radix-vs-blogdown-blogdown-remix_files/nopressure.gif)
+</center>
+
+```{r radixvsblogdown, layout="l-body-outset"}
+df <- tibble::tribble(~Feature, ~radix, ~blogdown,
+                "Github Repo Creation Date", "2018-04-23", "2016-11-02",
+                "R Markdown", "&#10004;", "&#10004;",
+                "For general purpose blogging", "", "",
+                "&emsp;Many themes available", "&#10008;", "&#10004;",
+                "&emsp;Adding date and author for posts", "&#10004;", "&#10004; for most theme." ,
+                "&emsp;Easy structure customisation", "&#10008;", "&#10004; depending on the theme.",
+                "&emsp;Adapts to different screens", "&#10004;", "&#10004; for most theme.",
+                
+                "For scientific/technical writing", "", "",
+                "&emsp;BibTeX citation easily works", "&#10004;", "&#10008;",
+                "&emsp;Adding affiliation", "&#10004;", "&#10008; easy to add but some fiddling needed for almost all theme.",
+                "&emsp;Customise figure layout", "&#10004;", "&#10008; fiddly if going over post margin.",
+                "&emsp;Side comments (Tufte style)", "&#10004;", "&#10008;",
+                "&emsp;Popup notes easily works", "&#10004;", "&#10008; works with some fiddling.",
+                "&emsp;Metadata for Google Scholar", "&#10004;", "&#10008; can be added with some work.",
+                "&emsp;LaTeX easily works", "&#10004;", "&#10004;",
+                "&emsp;Cross-reference", "&#10004;", "&#10004;",
+                "Author", "", "",
+                "&emsp;JJ Allaire", "&#10004;", "&#10008;",
+                "&emsp;Rich Iannone", "&#10004;", "&#10008;",
+                "&emsp;Yihui Xie", "&#10004;", "&#10004;")
+knitr::kable(df, caption="Feature comparison of `radix` and `blogdown`. The comparison is based on `radix` version 0.5.0.9001 and `blogdown` version 0.9.8.")
+```
+
+<aside>
+Some technical details in this article may be wrong due to my lack of understanding.
+</aside>
+
+### Radix
+
+`radix` is a new R package, that is based on the [Distill web framework](https://github.com/distillpub/template) to bring scientific or technical writing using R Markdown that is native to the web. The [Distill web framework](https://github.com/distillpub/template) is used in the [Distill Research Journal](https://distill.pub/about/) which publishes research on machine learning. More details about `radix` are well explained [here](https://rstudio.github.io/radix/). The `radix` framework is shown as a chart in Figure \@ref(fig:radix).
+
+
+
+
+<center>
+```{r radix, fig.cap="Radix Framework in a Chart",layout="l-screen-inset", fig.height=8}
+mermaid(diagram = '
+graph TD;
+    radix(radix)-->.Rmd(.Rmd);
+    .Rmd-->rmarkdown(rmarkdown);
+    rmarkdown-->Distill(Distill Web Framework);
+    Distill-->Pandoc(Pandoc);
+    Pandoc-->.html(.html);
+    style .Rmd fill:#41b5f4,stroke:#333,stroke-width:2px;
+    style .html fill:#41b5f4,stroke:#333,stroke-width:2px;
+    style Distill fill:#fff,stroke:#333,stroke-width:2px;
+    style Pandoc fill:#f9f,stroke:#333,stroke-width:2px;
+    style radix fill:#f9f,stroke:#333,stroke-width:2px;
+    style rmarkdown fill:#f9f,stroke:#333,stroke-width:2px;
+')
+```
+</center>
+
+
+
+### Blogdown
+
+`blogdown` is an R package that uses [Hugo](https://gohugo.io/) in the backend to generate the website. `blogdown` also can use [Jekyll](https://jekyllrb.com/) or [Hexo](https://hexo.io/) as the generator in place of Hugo however some features are only supported in Hugo. While the package name signifies that the primary motivation is for blogging, `blogdown` is not limited to blogs and is flexible to create any website. Details about the `blogdown` package is best explained in the [book](https://bookdown.org/yihui/blogdown/) by Xie et al. (2017). The `blogdown` framework is shown as a chart in Figure \@ref(fig:blogdown).
+
+<center>
+```{r blogdown, fig.cap="`blogdown` Hugo Framework in a Chart. Note that `blogdown` can use other generators such as Jekyll and Hexo in place of Hugo.", layout="l-screen-inset", fig.height=8}
+mermaid(diagram = '
+graph TD;
+    blogdown(blogdown)-->.Rmd(.Rmd);
+    blogdown-->.Rmarkdown(.Rmarkdown);
+    blogdown-->.md(.md);
+    .md-->BF(Blackfriday);
+    .Rmarkdown-->.markdown(.markdown);
+    .markdown-->BF;
+    .Rmd-->htmlpage(blogdown::html_page);
+    htmlpage-->htmldoc(bookdown::html_document2);
+    htmldoc-->rmd(rmarkdown::output_format);
+    rmd-->Pandoc(Pandoc);
+    Pandoc-->.html(.html);
+    BF-->Hugo(Hugo);
+    .html-->Hugo;
+    Hugo-->web(Stitch Website);
+    web-->deploy(Deploy Website);
+    style blogdown fill:#f9f,stroke:#333,stroke-width:4px;
+    style Pandoc fill:#f9f,stroke:#333,stroke-width:4px;
+    style Hugo fill:#f9f,stroke:#333,stroke-width:4px;
+    style BF fill:#f9f,stroke:#333,stroke-width:4px;
+    style .md fill:#41b5f4,stroke:#333,stroke-width:2px;
+    style .Rmarkdown fill:#41b5f4,stroke:#333,stroke-width:2px;
+    style .markdown fill:#41b5f4,stroke:#333,stroke-width:2px;
+    style .html fill:#41b5f4,stroke:#333,stroke-width:2px;
+    style .Rmd fill:#41b5f4,stroke:#333,stroke-width:2px;
+    style htmlpage fill:#fff,stroke:#333,stroke-width:2px;
+    style htmldoc fill:#fff,stroke:#333,stroke-width:2px;
+    style rmd fill:#fff,stroke:#333,stroke-width:2px;
+    style web fill:#fff,stroke:#333,stroke-width:2px;
+    style deploy fill:#fff,stroke:#333,stroke-width:2px;
+')
+```
+</center>
+
+
+
+## Showdown: `radix` vs. `blogdown`
+
+
+With an explicit (but optional) entry for affiliation in `radix`, users are consciously reminded that their blog posts may also reflect upon their affiliation's reputation and approach their writing with more seriousness and formality. Additionally, `radix` is built with scientific and technical writing in mind, thus, the format is more rigid, allowing for more consistency, and have a default set up and features convenient for this purpose (e.g. `echo=FALSE` as default for the chunks and side comments, etc). These features reduce the friction for the user to produce a beautiful scientific or technical web article. 
+
+It is possible to create a Hugo theme that mimics the `radix` output therefore there is no reason the more general purpose `blogdown` cannot be used for scientific or technical writing to achieve a similar output as `radix`. Of course this requires someone to create the theme and there isn't a closing matching theme at the moment. 
+
+R Markdown documents are usually used to populate the content for websites generated from both `radix` and `blogdown` therefore it would be easy to transition between the two packages albeit requiring some work. Perhaps one day someone will write an article on how to achieve this with minimal work. 
+
+So `radix` or `blogdown`? This is ultimately up to you. One thing I'm sure is that writing articles using R Markdown documents has aided greatly in my scientific writing.
+
+
+*This article is an accompaniment of the Software Corner of the [Biometric Bulletin](https://www.biometricsociety.org/publications/biometricbulletin/) (to appear). You can see the `radix` version of this blog [here](https://emitanaka.github.io/r/posts/2018-12-12-scientific-and-technical-blogging-radix-vs-blogdown/).*
