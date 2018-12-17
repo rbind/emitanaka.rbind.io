@@ -50,7 +50,7 @@ R Markdown, described briefly, allows you to use a simple syntax to seamlessly e
 
 R Markdown documents consist of all codes with the ability to easily hide the code (contained in the so-called chunks) for the desired output. The simplicity yet flexibility to customise makes R Markdown a powerful tool that makes it easy for users to adopt reproducible research and literate programming.
 
-R Markdown is written by the team of software enginners in RStudio who have shown commitment to open source projects and work in a company that appears to have a viable business model. These two points as well as large community usage (shown by the increasing popularity in Figure \@ref(fig:rmarkdowntrend)) give some assurance to me that there will be a long term commitment to maintaining the R Markdown based R packages.
+R Markdown is written by the team of software engineers at RStudio who have shown commitment to open source projects and work in a company that appears to have a viable business model. These two points as well as large community usage (shown by the increasing popularity in Figure \@ref(fig:rmarkdowntrend)) give some assurance to me that there will be a long term commitment to maintaining the R Markdown based R packages.
 
 
 
