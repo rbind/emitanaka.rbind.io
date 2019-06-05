@@ -10,6 +10,8 @@ tags:
 authors: []
 ---
 
+**[UPDATE 06/06/2019]** From `knitr` v1.23, `knit_code` is an exported function and so can be accessed with double-colon (i.e. `knitr::knit_code`) instead of triple-colon.
+
 [Yihui Xie in his recent post](https://yihui.name/en/2018/09/code-appendix/) wrote 
 
 <blockquote>
