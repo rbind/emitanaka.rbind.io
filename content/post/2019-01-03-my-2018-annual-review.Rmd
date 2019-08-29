@@ -13,7 +13,9 @@ authors: []
 
 I love reading the many #rstats goals that people have posted on twitter. As 2019 commenced, in no time, Jason Baik presented the analysis of these tweet 
 
-`r blogdown::shortcode("tweet", "1079967070207516672")`
+<<tweet not showing - need fix>>
+r blogdown::shortcode("tweet", "1079967070207516672")
+<<>>
 
 
 and [Maëlle Salmon wrote a blogpost on it](https://masalmon.eu/2019/01/01/r-goals/). Here is a bar/lollipop graph that Maëlle produced on the most mentioned topics:
@@ -22,7 +24,9 @@ and [Maëlle Salmon wrote a blogpost on it](https://masalmon.eu/2019/01/01/r-goa
 
 I don't think all mention of `package` here would refer to learning how to build an R package but Steph de Silva has come up with a lovely initiative with a lot of people happy to help you develop your R package so it's a good year perhaps to get started if you have not build an R package before!
 
-`r blogdown::shortcode("tweet", "1079856039812509698")`
+<<tweet not showing - need fix>>
+r blogdown::shortcode("tweet", "1079856039812509698")
+<<>>
 
 One of the other top mentions was `blog` so it seems that either people want commit more to blogging, or if not that reading blogs :P
 
@@ -40,9 +44,9 @@ While overall 2018 has been a great year, it doesn't mean everything that happen
 * [Mara started a #rstats version of #devAdvent](https://twitter.com/i/moments/1069591090674786305) starting off with me. Needless to say it made me happy :)
 
 
-
-`r blogdown::shortcode("tweet", 1068959063394869248)`
-
+<<tweet not showing - need fix>>
+r blogdown::shortcode("tweet", 1068959063394869248)
+<<>>
 
 * A special topics session organised by Tamanna got accepted for ISI World Statistics Congress. This means that I will be speaking on the same stage with IBS President Louise Ryan and ISI President-elect John Bailer at ISI WSC 2019 in Kuala Lumpur, Malaysia. 
 
